@@ -7,3 +7,5 @@
 ### [Images and structure](/info/Images%20and%20structure.md)
 
 ### [Docker repository](/info/Docker%20repository.md)
+
+### [Install Docker](/info/Install%20Docker.md)
