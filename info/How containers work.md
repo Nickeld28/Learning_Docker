@@ -29,4 +29,32 @@ Containers are created on a host machine running the GNU/Linux operating system.
 
 For other systems (Mac OS, Windows), Docker Desktop is used, which is based on a virtual machine running GNU/Linux and Docker runs on this host.
 
+### Container propertiers:
+
+* **CONTAINER ID** - Container identifier is assigned to each container automatically
+
+* **IMAGE** - Image name with which the container was created
+
+* **COMMAND** - The command that was run inside the container
+
+* **CREATED** - Information about when the container was created
+
+* **STATUS** - The current state of the container
+
+* **PORTS** - Container ports
+
+* **NAME** - Container name is assigned to each container automatically
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+069cb0b3e228   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago             reverent_galileo
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
