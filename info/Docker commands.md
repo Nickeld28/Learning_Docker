@@ -171,4 +171,56 @@ Status: Downloaded newer image for busybox:latest
 
 </details>
 
+### 7. Download the image and save locally
+
+* `docker pull <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+8a1e25ce7c4f: Pull complete 
+e78b137be355: Pull complete 
+39fc875bd2b2: Pull complete 
+035788421403: Pull complete 
+87c3fb37cbf2: Pull complete 
+c5cdd1ce752d: Pull complete 
+33952c599532: Pull complete 
+Digest: sha256:6db391d1c0cfb30588ba0bf72ea999404f2764febf0f1f196acd5867ac7efa7e
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+```
+
+</details>
+
+### 8. Removing a container
+
+* `docker rm <container_id>`
+* `docker rm <container_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker ps -a
+CONTAINER ID   IMAGE                COMMAND    CREATED          STATUS                      PORTS     NAMES
+85b50b027080   hello-world:latest   "/hello"   18 seconds ago   Exited (0) 17 seconds ago             happy_pascal
+3ca6e48096a5   hello-world          "/hello"   41 seconds ago   Exited (0) 41 seconds ago             epic_dijkstra
+nickeld28@DockerVM:~$ docker rm epic_dijkstra 
+epic_dijkstra
+nickeld28@DockerVM:~$ docker rm 85b50b027080
+85b50b027080
+nickeld28@DockerVM:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
