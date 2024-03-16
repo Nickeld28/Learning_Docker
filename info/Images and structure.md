@@ -34,4 +34,29 @@ Images may have different versions, which will have differences in some layers.
 
 There are official images that can be downloaded from DockerHub, and there are images created by the community. Developers can share their images.
 
+### Image properties:
+
+* **REPOSITORY** - Image repository name.
+
+* **TAG** - Image tag.
+
+* **IMAGE ID** - Image identifier.
+
+* **CREATED** - Information about when the image was created (updated).
+
+* **SIZE** - Image size (Kb).
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    d2c94e258dcb   10 months ago   13.3kB
+
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
