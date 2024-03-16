@@ -57,4 +57,8 @@ CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                  
 
 </details>
 
+### Hostname and IP address of the container
+
+Each container is automatically assigned its own IP address and hostname, which matches the Container ID.
+
 #### [<<< Back](/Summary.md)

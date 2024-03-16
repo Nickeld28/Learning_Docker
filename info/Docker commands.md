@@ -171,7 +171,29 @@ Status: Downloaded newer image for busybox:latest
 
 </details>
 
-### 7. Download the image and save locally
+### 7. Running a container and connecting to it interactively with the terminal:
+
+* `docker run -it <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -it busybox
+/ # ls
+bin    etc    lib    proc   sys    usr
+dev    home   lib64  root   tmp    var
+/ # hostname
+bc98423639e3
+/ # hostname -i
+172.17.0.2
+/ # exit
+```
+
+</details>
+
+### 8. Download the image and save locally
 
 * `docker pull <image_name>`
 
@@ -193,12 +215,11 @@ c5cdd1ce752d: Pull complete
 Digest: sha256:6db391d1c0cfb30588ba0bf72ea999404f2764febf0f1f196acd5867ac7efa7e
 Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
-
 ```
 
 </details>
 
-### 8. Removing a container
+### 9. Removing a container
 
 * `docker rm <container_id>`
 * `docker rm <container_name>`
@@ -218,7 +239,6 @@ nickeld28@DockerVM:~$ docker rm 85b50b027080
 85b50b027080
 nickeld28@DockerVM:~$ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-
 ```
 
 </details>
