@@ -571,4 +571,26 @@ Total reclaimed space: 114B
 
 </details>
 
+## 4. Actions with processes
+
+### 4.1. Creating a new process in a running container
+
+* `docker exec <options> <container_id> <command>`
+* `docker exec <options> <container_name> <command>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker exec -it 5ae4df7326b6 bash
+Error response from daemon: container 5ae4df7326b67b98d19cb47bda40b42d345d431b147efa0b9b7e14423ea68828 is not running
+```
+```bash
+nickeld28@DockerVM:~$ docker exec -it b81ed97a92c4 bash
+root@b81ed97a92c4:/# 
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)

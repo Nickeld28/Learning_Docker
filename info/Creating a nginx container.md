@@ -131,4 +131,62 @@ nickeld28@DockerVM:~$
 
 </details>
 
+To connect to a running container, you can create a new process in it and launch a shell:
+
+    docker exec -it b81ed97a92c4 bash
+
+And then I want to see the contents of the nginx start html page.
+
+### Example of connecting to a running container by executing a command:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker exec -it b81ed97a92c4 bash
+root@b81ed97a92c4:/# hostname
+b81ed97a92c4
+root@b81ed97a92c4:/# hostname -i
+172.17.0.2
+root@b81ed97a92c4:/# ls
+bin   dev		   docker-entrypoint.sh  home  lib64  mnt  proc  run   srv  tmp  var
+boot  docker-entrypoint.d  etc			 lib   media  opt  root  sbin  sys  usr
+root@b81ed97a92c4:/# cd /usr/share/nginx/html
+root@b81ed97a92c4:/usr/share/nginx/html# ls -la
+total 16
+drwxr-xr-x 2 root root 4096 Mar 12 01:55 .
+drwxr-xr-x 3 root root 4096 Mar 12 01:55 ..
+-rw-r--r-- 1 root root  497 Feb 14 16:03 50x.html
+-rw-r--r-- 1 root root  615 Feb 14 16:03 index.html
+root@b81ed97a92c4:/usr/share/nginx/html# cat index.html 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+root@b81ed97a92c4:/usr/share/nginx/html# exit
+exit
+nickeld28@DockerVM:~$ 
+
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
