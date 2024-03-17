@@ -81,4 +81,22 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS       
 
 </details>
 
+To try to connect to the web server, I try to find out its IP address:
+
+    docker inspect 0b994de93936 | grep IPAddress
+
+### Example of finding a server IP address in a container:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker inspect 0b994de93936 | grep IPAddress
+            "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAddress": "172.17.0.2",
+nickeld28@DockerVM:~$ 
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
