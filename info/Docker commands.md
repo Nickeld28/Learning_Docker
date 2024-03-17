@@ -41,7 +41,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ## 1. Show information
 
-## 1.1. Show Docker client information
+### 1.1. Show Docker client information
 
 * `docker -v`
 * `docker --version`
@@ -451,7 +451,24 @@ nickeld28@DockerVM:~$
 
 </details>
 
-### 3.4. Stopping a container:
+### 3.4. Creating and running a named container:
+
+* `docker run --name <my_container_name> <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run --name bbox busybox
+nickeld28@DockerVM:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                      PORTS     NAMES
+5ae4df7326b6   busybox       "sh"                     5 seconds ago       Exited (0) 4 seconds ago              bbox
+```
+
+</details>
+
+### 3.5. Stopping a container:
 
 * `docker stop <container_id>`
 * `docker stop <container_name>`
@@ -470,7 +487,7 @@ laughing_tesla
 
 </details>
 
-### 3.5. Forced stopping of a container:
+### 3.6. Forced stopping of a container:
 
 * `docker kill <container_id>`
 * `docker kill <container_name>`
@@ -486,7 +503,7 @@ frosty_joliot
 
 </details>
 
-### 3.6. Removing a stopped container
+### 3.7. Removing a stopped container
 
 * `docker rm <container_id>`
 * `docker rm <container_name>`
@@ -510,7 +527,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 3.7. Removing a running container:
+### 3.8. Removing a running container:
 
 * `docker rm -f <container_id>`
 * `docker rm -f <container_name>`
@@ -531,7 +548,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 3.8. Removing all stopped containers
+### 3.9. Removing all stopped containers
 
 * `docker container prune`
 

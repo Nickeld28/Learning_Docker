@@ -112,4 +112,23 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
+Let's create and launch a new container with a custom name:
+
+    docker run -d --name my_nginx nginx
+
+### Example of creating a container with the specified name:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d --name my_nginx nginx
+b81ed97a92c4f461839f1d87be695cf1fae3afbe388c40ae9eebeed3516a42f2
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+b81ed97a92c4   nginx     "/docker-entrypoint.…"   7 seconds ago   Up 7 seconds   80/tcp    my_nginx
+nickeld28@DockerVM:~$ 
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
