@@ -58,4 +58,27 @@ Status: Downloaded newer image for nginx:latest
 
 </details>
 
+Stopped the container using a keyboard shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+
+To prevent the terminal from automatically connecting to the container upon startup, I will run it in the detached mode:
+
+    docker run -d nginx
+
+### Example of running in the detached mode:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d nginx
+0b994de9393645ac0527cc30397a311a56249659c169c8a0e2a8a624df7663a0
+nickeld28@DockerVM:~$ 
+```
+```bash
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+0b994de93936   nginx     "/docker-entrypoint.…"   14 minutes ago   Up 14 minutes   80/tcp    frosty_joliot
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)

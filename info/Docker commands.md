@@ -197,7 +197,7 @@ Status: Downloaded newer image for busybox:latest
 
 </details>
 
-### 8. Running a container and connecting to it interactively with the terminal:
+### 8. Creating and running a container and connecting to it interactively with the terminal:
 
 * `docker run -it <image_name>`
 
@@ -219,7 +219,23 @@ bc98423639e3
 
 </details>
 
-### 9. Stopping a container:
+### 9. Creating and running a container in the detached mode:
+
+* `docker run -d <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d nginx
+34bd60ce3cd02df873ba57fa9c9cb40d49f4ef16dd23228ccd6c1205d16da259
+nickeld28@DockerVM:~$ 
+```
+
+</details>
+
+### 10. Stopping a container:
 
 * `docker stop <container_id>`
 * `docker stop <container_name>`
@@ -238,7 +254,7 @@ laughing_tesla
 
 </details>
 
-### 10. Removing a stopped container
+### 11. Removing a stopped container
 
 * `docker rm <container_id>`
 * `docker rm <container_name>`
@@ -262,7 +278,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 11. Removing a running container:
+### 12. Removing a running container:
 
 * `docker rm -f <container_id>`
 * `docker rm -f <container_name>`
@@ -283,7 +299,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 12. Removing all stopped containers
+### 13. Removing all stopped containers
 
 * `docker container prune`
 
