@@ -571,6 +571,22 @@ Total reclaimed space: 114B
 
 </details>
 
+### 3.10. Creating and running a container with publishing ports (mapping)
+
+* `docker run --publish <OUTER_port>:<INNER_port>  <image>`
+* `docker run -p <OUTER_port>:<INNER_port> <image>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d --publish 8080:80 nginx
+1eba2df585ef852fafc9b9eef975449d2d7c48a63ed73a35a7b52f9ae62fca38
+```
+
+</details>
+
 ## 4. Actions with processes
 
 ### 4.1. Creating a new process in a running container

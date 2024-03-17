@@ -189,4 +189,68 @@ nickeld28@DockerVM:~$
 
 </details>
 
+I know the server's IP address, I try to connect through a browser to the server using the URL `https://172.17.0.2/` via HTTP and *(default port 80)*, but without success.
+
+### Failed attempt to connect to the server in the container:
+
+<details>
+
+>### Unable to connect
+>
+>An error occurred during a connection to 172.17.0.2.
+>
+>* The site could be temporarily unavailable or too busy. Try again in a few moments.
+>* If you are unable to load any pages, check your computer’s network connection.
+>* If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+
+</details>
+
+To be able to connect to the server, you need to publish the container port, i.e. map the host port where docker is installed with the container port.
+
+I'll run a new container publishing port 80:
+
+    docker run -d -p 8080:80 nginx
+
+### Example of running a container with an open port:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d -p 8080:80 nginx
+1eba2df585ef852fafc9b9eef975449d2d7c48a63ed73a35a7b52f9ae62fca38
+```
+
+```
+http://127.0.0.1:8080/
+
+Welcome to nginx!
+
+If you see this page, the nginx web server is successfully installed and working. Further configuration is required.
+
+For online documentation and support please refer to nginx.org.
+Commercial support is available at nginx.com.
+
+Thank you for using nginx.
+```
+
+</details>
+
+Outer ports that have already been used cannot be used for mapping; only free ports can be used.
+
+I'm trying to start a new container publishing port 80 with the same external port as another running container:
+
+    docker run -d -p 8080:80 nginx
+
+### Failed attempt to create a container using a busy port:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -d -p 8080:80 nginx
+a6b0d395d1c2ffdee5b47c8b40e9488741f69b068c20da06184328a348e23794
+docker: Error response from daemon: driver failed programming external connectivity on endpoint pensive_hamilton (7eb59c010f5a6d60dbdaa7bd0863c0d5d4b07ad46d643d682f90f915b844a72e): Bind for 0.0.0.0:8080 failed: port is already allocated.
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
