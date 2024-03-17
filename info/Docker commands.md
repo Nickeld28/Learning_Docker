@@ -152,48 +152,7 @@ hello-world   latest    d2c94e258dcb   10 months ago   13.3kB
 
 </details>
 
-### 6. Creating and running a container from an image
-
-* `docker run <image_name>`
-
-#### My example:
-
-<details>
-
-```bash
-nickeld28@DockerVM:~$ docker run busybox
-Unable to find image 'busybox:latest' locally
-latest: Pulling from library/busybox
-7b2699543f22: Pull complete 
-Digest: sha256:650fd573e056b679a5110a70aabeb01e26b76e545ec4b9c70a9523f2dfaf18c6
-Status: Downloaded newer image for busybox:latest
-```
-
-</details>
-
-### 7. Running a container and connecting to it interactively with the terminal:
-
-* `docker run -it <image_name>`
-
-#### My example:
-
-<details>
-
-```bash
-nickeld28@DockerVM:~$ docker run -it busybox
-/ # ls
-bin    etc    lib    proc   sys    usr
-dev    home   lib64  root   tmp    var
-/ # hostname
-bc98423639e3
-/ # hostname -i
-172.17.0.2
-/ # exit
-```
-
-</details>
-
-### 8. Download the image and save locally
+### 6. Download the image and save locally
 
 * `docker pull <image_name>`
 
@@ -219,7 +178,67 @@ docker.io/library/nginx:latest
 
 </details>
 
-### 9. Removing a container
+### 7. Creating and running a container from an image
+
+* `docker run <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run busybox
+Unable to find image 'busybox:latest' locally
+latest: Pulling from library/busybox
+7b2699543f22: Pull complete 
+Digest: sha256:650fd573e056b679a5110a70aabeb01e26b76e545ec4b9c70a9523f2dfaf18c6
+Status: Downloaded newer image for busybox:latest
+```
+
+</details>
+
+### 8. Running a container and connecting to it interactively with the terminal:
+
+* `docker run -it <image_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker run -it busybox
+/ # ls
+bin    etc    lib    proc   sys    usr
+dev    home   lib64  root   tmp    var
+/ # hostname
+bc98423639e3
+/ # hostname -i
+172.17.0.2
+/ # exit
+```
+
+</details>
+
+### 9. Stopping a container:
+
+* `docker stop <container_id>`
+* `docker stop <container_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker stop bc98423639e3
+bc98423639e3
+
+nickeld28@DockerVM:~$ docker stop laughing_tesla 
+laughing_tesla
+```
+
+</details>
+
+### 10. Removing a stopped container
 
 * `docker rm <container_id>`
 * `docker rm <container_name>`
@@ -239,6 +258,50 @@ nickeld28@DockerVM:~$ docker rm 85b50b027080
 85b50b027080
 nickeld28@DockerVM:~$ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+</details>
+
+### 11. Removing a running container:
+
+* `docker rm -f <container_id>`
+* `docker rm -f <container_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+b03ecf604f30   busybox   "sh"      4 seconds ago   Up 4 seconds             sleepy_dhawan
+nickeld28@DockerVM:~$ docker rm -f sleepy_dhawan
+sleepy_dhawan
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+</details>
+
+### 12. Removing all stopped containers
+
+* `docker container prune`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+dd2368af00b27bd1d75c243caae9cd77fedf164a780259df3659d1a1eb88f472
+000775ce25222fa2aeb3edb5d47ddbd16385af9505e637c9f788e374d88e3fac
+9f99ff12370fe6866486de88f98ad0f5822b7ce2248039a4e25d8dea60578981
+0b9190afb9ed48e80b1fe9e6d32d763e7127a164661e95c600c5a04c523243f1
+bc98423639e3a39e66c4b47aec0efd6ffc6ab8931a90047a7001be94424af150
+Total reclaimed space: 114B
 ```
 
 </details>

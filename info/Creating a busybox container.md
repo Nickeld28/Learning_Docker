@@ -103,4 +103,49 @@ PING google.com (209.85.233.139): 56 data bytes
 
 </details>
 
+### Example of stopping a container:
+
+You can stop a container inside a container with the command:
+
+    exit
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker stop zen_gauss 
+zen_gauss
+nickeld28@DockerVM:~$
+```
+
+</details>
+
+### Example of removing a stopped container:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker rm zen_gauss 
+zen_gauss
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+</details>
+
+### Example of removing a running container:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker rm bc48e384d395
+Error response from daemon: cannot remove container "/optimistic_aryabhata": container is running: stop the container before removing or force remove
+
+nickeld28@DockerVM:~$ docker rm -f bc48e384d395
+bc48e384d395
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)
