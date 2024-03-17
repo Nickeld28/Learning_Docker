@@ -99,4 +99,17 @@ nickeld28@DockerVM:~$
 
 </details>
 
+### Example of forced stopping of a container:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker kill frosty_joliot 
+frosty_joliot
+nickeld28@DockerVM:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES 
+```
+
+</details>
+
 #### [<<< Back](/Summary.md)

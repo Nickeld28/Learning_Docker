@@ -254,7 +254,23 @@ laughing_tesla
 
 </details>
 
-### 11. Removing a stopped container
+### 11. Forced stopping of a container:
+
+* `docker kill <container_id>`
+* `docker kill <container_name>`
+
+#### My example:
+
+<details>
+
+```bash
+nickeld28@DockerVM:~$ docker kill frosty_joliot 
+frosty_joliot
+```
+
+</details>
+
+### 12. Removing a stopped container
 
 * `docker rm <container_id>`
 * `docker rm <container_name>`
@@ -278,7 +294,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 12. Removing a running container:
+### 13. Removing a running container:
 
 * `docker rm -f <container_id>`
 * `docker rm -f <container_name>`
@@ -299,7 +315,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 </details>
 
-### 13. Removing all stopped containers
+### 14. Removing all stopped containers
 
 * `docker container prune`
 
@@ -322,7 +338,7 @@ Total reclaimed space: 114B
 
 </details>
 
-### 14. Show low-level information on Docker object:
+### 15. Show low-level information on Docker object:
 
 * `docker inspect <docker_object>`
 
