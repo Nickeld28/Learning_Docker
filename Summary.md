@@ -15,3 +15,5 @@
 ### [Creating a hello-world container](/info/Creating%20a%20hello-world%20container.md)
 
 ### [Creating a busybox container](/info/Creating%20a%20busybox%20container.md)
+
+### [Creating a nginx container](/info/Creating%20a%20nginx%20container.md)
